@@ -1,0 +1,46 @@
+/* Estilos para la página de inicio solo son css para el index */  
+body {
+    background-image: url('images/emirates.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.navbar a {
+    color: #fff;
+}
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+.hero p {
+    font-size: 1.2rem;
+}
+.btn-custom {
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+}
+.btn-custom:hover {
+    background-color: #e68900;
+}
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+}
+/*aca termina el css del index*/
