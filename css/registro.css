@@ -1,0 +1,175 @@
+body {
+    font-family: 'Cutive Mono', monospace;
+    background: linear-gradient(to bottom, #a18cd1, #fbc2eb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.form-switcher {
+    width: 400px;
+    text-align: center;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.form-container {
+    display: none;
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input#login:checked ~ #login-form {
+    display: block;
+}
+
+input#register:checked ~ #register-form {
+    display: block;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    background: #f3f1f7;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 5px 15px;
+}
+
+.input-container i {
+    color: #6a11cb;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.input-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+button {
+    background: linear-gradient(to right, #6a11cb, #dd84f4);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background: linear-gradient(to right, #5a0db3, #1e63d1);
+}
+
+form h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #6a11cb; 
+    font-weight: bold;
+}
+
+.input-container i.icon-email {
+    content: '\f0e0'; 
+}
+
+.input-container i.icon-lock {
+    content: '\f023'; 
+}
+
+.input-container input:focus {
+    border-color: #a18cd1;
+    outline: none;
+    box-shadow: 0 0 8px rgba(161, 140, 209, 0.5);
+}
+
+form button {
+    background: linear-gradient(to right, #6a11cb, #dd84f4);
+    color: white;
+    border: none;
+    padding: 10px 20px; 
+    font-size: 14px; 
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+    border-radius: 25px;
+}
+
+form button:hover {
+    background: linear-gradient(to right, #5a0db3, #1e63d1);
+}
+
+form .links {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6a11cb;
+}
+
+form .links a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form .links a:hover {
+    text-decoration: underline;
+}
+
+.forgot-password {
+    display: block;
+    margin: 10px 0 20px; /* Espaciado entre "¿Olvidaste la contraseña?" y el botón */
+    font-size: 14px;
+    color: #6a11cb;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.register-link {
+    margin-bottom: 20px; /* Espaciado entre el enlace de "Regístrate" y el botón */
+    font-size: 14px;
+    color: #6a11cb;
+}
+
+.register-link a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.register-link label {
+    color: #6a11cb;
+    cursor: pointer;
+    text-decoration: underline;
+}
