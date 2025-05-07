@@ -1,46 +1,161 @@
-/* Estilos para la página de inicio solo son css para el index */  
 body {
-    background-image: url('images/emirates.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    color: #fff;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f9;
 }
-.navbar {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-.navbar a {
-    color: #ffffff;
-}
-.hero {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+header {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #fff;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.hero h1 {
+
+header h1 {
     font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+header .btn {
+    background: #fff;
+    color: #333;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .btn:hover {
+    background: #ddd;
+    transform: scale(1.05);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #444;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #00f2fe;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+.services, .food-and-drinks, .gallery, .contact {
+    padding: 3rem 0;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-list, .food-drinks-list, .gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.service-item, .food-drink-item, .gallery-item {
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover, .food-drink-item:hover, .gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.service-item i, .food-drink-item img, .gallery-item img {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #00f2fe;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.service-item h3, .food-drink-item h3, .gallery-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.service-item p, .food-drink-item p, .gallery-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+footer p a {
+    color: #00f2fe;
+    text-decoration: none;
     font-weight: bold;
 }
-.hero p {
-    font-size: 1.2rem;
+
+footer p a:hover {
+    text-decoration: underline;
 }
-.btn-custom {
-    background-color: #ff9800;
-    color: #fff;
-    border: none;
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .service-list, .food-drinks-list, .gallery-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 }
-.btn-custom:hover {
-    background-color: #e68900;
+
+
+.card-presentacion{
+    border: #00f2fe 2px solid;
+    height: 80vh !important;
 }
-footer {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ccc;
-    padding: 20px 0;
-    text-align: center;
-}
-/*aca termina el css del index*/
