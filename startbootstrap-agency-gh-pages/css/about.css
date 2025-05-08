@@ -1,0 +1,116 @@
+/* General styles for the About section */
+#about {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+#about .section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #212529;
+}
+
+#about .section-subheading {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: #6c757d;
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #e9ecef;
+    transform: translateX(-50%);
+}
+
+.timeline > li {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline > li .timeline-panel {
+    position: relative;
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline > li .timeline-panel:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -15px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+}
+
+.timeline > li.timeline-inverted .timeline-panel {
+    float: right;
+}
+
+.timeline > li.timeline-inverted .timeline-panel:before {
+    left: -15px;
+    right: auto;
+    border-color: transparent #fff transparent transparent;
+}
+
+.timeline > li .timeline-image {
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    border: 7px solid #e9ecef;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline > li .timeline-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.timeline > li .timeline-heading h4 {
+    margin-top: 0;
+    color: #212529;
+}
+
+.timeline > li .timeline-heading .subheading {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.timeline > li .timeline-body p {
+    margin-bottom: 0;
+    color: #6c757d;
+}
+
+/* Final timeline item */
+.timeline > li:last-child .timeline-image {
+    background-color: #ffc107;
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+}
