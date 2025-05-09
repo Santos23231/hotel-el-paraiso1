@@ -1,0 +1,13 @@
+/* Estilo para los enlaces del menú de navegación */
+.nav-link {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #f0ad4e; /* Cambia a un color destacado al pasar el cursor */
+    text-decoration: none;
+}
