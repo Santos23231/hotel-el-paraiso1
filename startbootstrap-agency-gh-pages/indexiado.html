@@ -10,6 +10,7 @@
         <link href="css/hola.css" rel="stylesheet" />
         <link href="css/21.css" rel="stylesheet" />
         <link href="css/about.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/servicios.css">
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome -->
@@ -44,6 +45,166 @@
         <a class="btn btn-warning btn-xl text-uppercase" href="#services">Tell Me More</a>
     </div>
 </header>
+<!-- Servicios -->
+<section class="page-section" id="services">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Nuestros Servicios</h2>
+            <h3 class="section-subheading text-muted">Descubre todo lo que ofrecemos para hacer tu estancia inolvidable.</h3>
+        </div>
+        <div class="row text-center">
+            <!-- Servicio 1 -->
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fas fa-concierge-bell fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="my-3">Atención 24/7</h4>
+                <p class="text-muted">Nuestro equipo está disponible las 24 horas para atender todas tus necesidades.</p>
+            </div>
+            <!-- Servicio 2 -->
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fas fa-utensils fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="my-3">Restaurante Gourmet</h4>
+                <p class="text-muted">Disfruta de una experiencia culinaria única con platos locales e internacionales.</p>
+                
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#menuRestauranteModal">Ver Menú</a>
+            </div>
+            <!-- Servicio 3 -->
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fas fa-spa fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="my-3">Spa y Bienestar</h4>
+                <p class="text-muted">Relájate y rejuvenece con nuestros servicios de spa y tratamientos personalizados.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Menú del Restaurante en Modal Fullscreen -->
+<div class="modal fade" id="menuRestauranteModal" tabindex="-1" aria-labelledby="menuRestauranteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-uppercase" id="menuRestauranteModalLabel">Menú del Restaurante</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <section class="page-section bg-light" id="restaurant-menu">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Menú del Restaurante</h2>
+                    <h3 class="section-subheading text-muted">Explora nuestras opciones de desayuno, almuerzo y cena.</h3>
+                </div>
+                <div class="row">
+                    <h1>DESAYUNOS</h1>
+                    <!-- Desayuno -->
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <h4 class="text-center">Desayuno</h4>
+                        <img class="img-fluid rounded mb-3" src="/css/images/desayuno/comida1.jpg" alt="Desayuno">
+                        <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <h4 class="text-center">Desayuno</h4>
+                        <img class="img-fluid rounded mb-3" src="/css/images/desayuno/comida2.jpg" alt="Desayuno">
+                        <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <h4 class="text-center">Desayuno</h4>
+                        <img class="img-fluid rounded mb-3" src="/css/images/desayuno/comida3.jpg" alt="Desayuno">
+                        <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <h4 class="text-center">Desayuno</h4>
+                        <img class="img-fluid rounded mb-3" src="/css/images/desayuno/comida4.jpg" alt="Desayuno">
+                        <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
+                    </div>
+                    <h1>ALMUERZOS</h1>
+                    <!-- Almuerzo -->
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <h4 class="text-center">Almuerzo</h4>
+                        <img class="img-fluid rounded mb-3" src="/css/images/almuerzo/comida6.jpg" alt="Almuerzo">
+                        <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <h4 class="text-center">Almuerzo</h4>
+                        <img class="img-fluid rounded mb-3" src="/css/images/almuerzo/comida7.jpg" alt="Almuerzo">
+                        <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <h4 class="text-center">Almuerzo</h4>
+                        <img class="img-fluid rounded mb-3" src="/css/images/almuerzo/comida8.jpg" alt="Almuerzo">
+                        <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <h4 class="text-center">Almuerzo</h4>
+                        <img class="img-fluid rounded mb-3" src="/css/images/almuerzo/comida9.jpg" alt="Almuerzo">
+                        <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <h4 class="text-center">Almuerzo</h4>
+                        <img class="img-fluid rounded mb-3" src="/css/images/almuerzo/comida10.jpg" alt="Almuerzo">
+                        <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
+                    </div>
+
+                    <h1>CENAS</h1>
+                    <!-- Cena -->
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <h4 class="text-center">Cena</h4>
+                        <img class="img-fluid rounded mb-3" src="assets/img/menu/cena.jpg" alt="Cena">
+                        <p class="text-muted text-center">Termina tu día con una cena inolvidable en nuestro restaurante.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <h3 class="section-heading text-uppercase">Bebidas</h3>
+                    <h4 class="section-subheading text-muted">Refresca tu día con nuestras bebidas exclusivas.</h4>
+                </div>
+                <div class="row">
+                    <!-- Bebida 1 -->
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <img class="img-fluid rounded mb-3" src="/css/images/bebidas/bebida1.jpeg" alt="Bebida 1">
+                        <p class="text-muted text-center">Bebida refrescante 1</p>
+                    </div>
+                    <!-- Bebida 2 -->
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <img class="img-fluid rounded mb-3" src="/css/images/bebidas/bebida2.jpg" alt="Bebida 2">
+                        <p class="text-muted text-center">Bebida refrescante 2</p>
+                    </div>
+                    <!-- Bebida 3 -->
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <img class="img-fluid rounded mb-3" src="/css/images/bebidas/bebida3.jpg" alt="Bebida 3">
+                        <p class="text-muted text-center">Bebida refrescante 3</p>             
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <img class="img-fluid rounded mb-3" src="/css/images/bebidas/bebida3.jpg" alt="Bebida 3">
+                        <p class="text-muted text-center">Bebida refrescante 3</p>             
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <img class="img-fluid rounded mb-3" src="/css/images/bebidas/bebida3.jpg" alt="Bebida 3">
+                        <p class="text-muted text-center">Bebida refrescante 3</p>             
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+    </div>
+</div>
+
+<!-- Botón para abrir el modal -->
+
+
+
+
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
         <div class="text-center">
@@ -142,52 +303,70 @@
         </div>
     </div>
 </section>
+
+
+
+
+
+
 <!-- About -->
 <section class="page-section" id="about">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">About</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">Acerca de nosotros </h2>
+            <h3 class="section-subheading text-muted">Vive la mejor experiencia en nuestro hotel..</h3>
         </div>
         <ul class="timeline">
             <li>
                 <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4>2009-2011</h4>
-                        <h4 class="subheading">Our Humble Beginnings</h4>
+                        <h4>Hotel El Paraiso</h4>
+                        <h4 class="subheading"> Fundando en 2012</h4>
                     </div>
-                    <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    <div class="timeline-body"><p class="text-muted">Hotel el Paraiso nació del sueño de una familia apasionada por la hospitalidad. Todo comenzó con una pequeña casa frente al mar, donde recibían viajeros con un café caliente y una conversación acogedora. Con el tiempo, la demanda creció y la casa se transformó en un hotel, donde cada habitación refleja la esencia de la tranquilidad y el confort. Hoy, Hotel El Paraiso sigue siendo un refugio para quienes buscan descanso y momentos inolvidables, manteniendo la calidez con la que todo inició</p></div>
                 </div>
             </li>
             <li class="timeline-inverted">
                 <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4>March 2011</h4>
-                        <h4 class="subheading">An Agency is Born</h4>
+                        <h4>Mision del Hotel</h4>
+                        <h4 class="subheading">La mejor experiencia</h4>
                     </div>
-                    <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    <div class="timeline-body"><p class="text-muted">Brindar una experiencia única de hospitalidad, combinando confort, atención personalizada y un ambiente acogedor. Nos comprometemos a ofrecer servicios de alta calidad que hagan sentir a cada huésped como en casa, creando recuerdos inolvidables en cada estancia.</p></div>
                 </div>
             </li>
             <li>
                 <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4>December 2015</h4>
-                        <h4 class="subheading">Transition to Full Service</h4>
+                        <h4>REDES SOCIALES</h4>
+                        <h4 class="subheading">Síguenos en:</h4>
                     </div>
-                    <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    <div class="timeline-body">
+                        <p class="text-muted">
+                            <a href="https://www.facebook.com/HotelElParaiso" target="_blank" class="text-decoration-none">
+                                <i class="fab fa-facebook-f"></i> Hotel El Paraiso
+                            </a><br>
+                            <a href="https://www.instagram.com/Hotel_Paraiso" target="_blank" class="text-decoration-none">
+                                <i class="fab fa-instagram"></i> @Hotel_Paraiso
+                            </a><br>
+                            <a href="mailto:hotelparaiso@g.mail.com" class="text-decoration-none">
+                                <i class="fas fa-envelope"></i> hotelparaiso@g.mail.com
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </li>
             <li class="timeline-inverted">
                 <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4>July 2020</h4>
-                        <h4 class="subheading">Phase Two Expansion</h4>
+                        <h4>Visión del Hotel</h4>
+                        <h4 class="subheading">Ofrecer una experiencia inolvidable.</h4>
                     </div>
-                    <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    <div class="timeline-body"><p class="text-muted">er el hotel de referencia en nuestra región, reconocido por la excelencia en servicio, la innovación en el turismo y nuestro compromiso con la sostenibilidad. Aspiramos a crecer y evolucionar, manteniendo siempre nuestra esencia de calidez y calidad.</p></div>
                 </div>
             </li>
             <li class="timeline-inverted">
