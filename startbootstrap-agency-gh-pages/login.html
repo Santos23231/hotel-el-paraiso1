@@ -9,7 +9,7 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center">Iniciar Sesión</h2>
-        <form class="mt-4" action="#" method="post">
+        <form class="mt-4" id="loginForm">
             <!-- Usuario -->
             <div class="mb-3">
                 <label for="username" class="form-label">Usuario</label>
@@ -19,9 +19,7 @@
                     id="username" 
                     name="username" 
                     placeholder="Ingresa tu usuario" 
-                    required 
-                    pattern="admin" 
-                    title="El usuario debe ser 'admin'.">
+                    required>
             </div>
             <!-- Contraseña -->
             <div class="mb-3">
@@ -32,9 +30,12 @@
                     id="password" 
                     name="password" 
                     placeholder="Ingresa tu contraseña" 
-                    required 
-                    pattern="123456" 
-                    title="La contraseña debe ser '123456'.">
+                    required>
+            </div>
+
+            <!-- Mensaje de error -->
+            <div id="errorMessage" class="text-danger mb-3" style="display: none;">
+                Usuario o contraseña incorrectos.
             </div>
 
             <!-- Botón de envío -->
@@ -42,11 +43,21 @@
         </form>
     </div>
     <script>
-        // Establecer la fecha máxima para el campo de nacimiento (hoy - 18 años)
-        const birthdateInput = document.getElementById('birthdate');
-        const today = new Date();
-        const maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
-        birthdateInput.max = maxDate.toISOString().split('T')[0];
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío del formulario
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Validar credenciales
+            if (username === 'admin' && password === '2024605') {
+                alert('Inicio de sesión exitoso');
+                // Aquí puedes redirigir al usuario o realizar otra acción
+            } else {
+                const errorMessage = document.getElementById('errorMessage');
+                errorMessage.style.display = 'block'; // Muestra el mensaje de error
+            }
+        });
     </script>
 </body>
 </html>
