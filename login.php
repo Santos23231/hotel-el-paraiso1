@@ -1,3 +1,24 @@
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Aquí puedes agregar la lógica para validar el usuario y la contraseña
+    if ($username === 'admin' && $password === '2024605') {
+        
+        header("Location: admin/panel.php");
+        exit();
+    } else {
+        // Credenciales incorrectas
+        echo "Usuario o contraseña incorrectos.";
+    }
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +29,7 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center">Iniciar Sesión</h2>
-        <form class="mt-4" id="loginForm">
+        <form class="mt-4" id="loginForm" method="post">
 
             <div class="mb-3">
                 <label for="username" class="form-label">Usuario</label>
@@ -41,22 +62,5 @@
             <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
         </form>
     </div>
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita el envío del formulario
-
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Validar credenciales
-            if (username === 'admin' && password === '2024605') {
-                alert('Inicio de sesión exitoso');
-                // Aquí puedes redirigir al usuario o realizar otra acción
-            } else {
-                const errorMessage = document.getElementById('errorMessage');
-                errorMessage.style.display = 'block'; // Muestra el mensaje de error
-            }
-        });
-    </script>
 </body>
 </html>
