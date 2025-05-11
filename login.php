@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+// Usuarios quemados
+$users = [
+    'admin' => 'hola', // Usuario administrador
+    'user' => '123'    // Usuario normal
+];
 
 $errorMessage = "";
 
@@ -6,16 +13,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Aquí puedes agregar la lógica para validar el usuario y la contraseña
-    if ($username === 'admin' && $password === '2024605') {
-        header("Location: admin/panel.php");
+    // Validar credenciales
+    if (isset($users[$username]) && $users[$username] === $password) {
+        $_SESSION['username'] = $username;
+        header("Location: panel.php");
         exit();
     } else {
-        // Credenciales incorrectas
         $errorMessage = "Usuario o contraseña incorrectos.";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
