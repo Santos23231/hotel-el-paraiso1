@@ -242,7 +242,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Habitación Deluxe</h5>
                         <p class="card-text">Disfruta de una experiencia única con vistas al mar y todas las comodidades.</p>
-                        <a href="reserva.html" class="btn btn-primary">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -253,7 +252,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Habitación Familiar</h5>
                         <p class="card-text">Ideal para familias, con espacio amplio y comodidades modernas.</p>
-                        <a href="reserva.html" class="btn btn-primary">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -264,7 +262,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Suite Presidencial</h5>
                         <p class="card-text">La máxima expresión de lujo y confort para una estancia inolvidable.</p>
-                        <a href="reserva.html" class="btn btn-primary">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -275,7 +272,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Habitación Ejecutiva</h5>
                         <p class="card-text">Perfecta para viajes de negocios, con escritorio y servicios premium.</p>
-                        <a href="reserva.html" class="btn btn-primary">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -286,7 +282,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Habitación Doble</h5>
                         <p class="card-text">Espaciosa y cómoda, ideal para compartir con amigos o familiares.</p>
-                        <a href="reserva.html" class="btn btn-primary">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -297,7 +292,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Habitación Superior</h5>
                         <p class="card-text">Con vistas panorámicas y servicios exclusivos para una experiencia única.</p>
-                        <a href="reserva.html" class="btn btn-primary">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -308,7 +302,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Habitación Premium</h5>
                         <p class="card-text">Diseñada para el máximo confort, con detalles de lujo en cada rincón.</p>
-                        <a href="reserva.html" class="btn btn-primary">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -319,7 +312,6 @@
                     <div class="card-body">
                         <h5 class="card-title">Habitación de Lujo</h5>
                         <p class="card-text">La opción más exclusiva, con servicios personalizados y decoración elegante.</p>
-                        <a href="reserva.html" class="btn btn-primary">Reservar</a>
                     </div>
                 </div>
             </div>
