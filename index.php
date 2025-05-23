@@ -133,6 +133,7 @@
                     <h1>ALMUERZOS</h1>
                     <!-- Almuerzo -->
                     <div class="col-lg-4 col-sm-6 mb-4">
+
                         <img class="img-fluid rounded mb-3" src="./css/images/almuerzo/comida6.jpg" alt="Almuerzo">
                         <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
                     </div>
@@ -157,9 +158,8 @@
                         <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
                     </div>
 
-                <div class="text-center mt-5">
-                    <h3 class="section-heading text-uppercase">CENAS</h3>
-                </div>
+                    <h1>CENAS</h1>
+                    <!-- Cena -->
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/cena/cena1.jpg" alt="Cena">
                         <p class="text-muted text-center">Termina tu día con una cena inolvidable en nuestro restaurante.</p>
