@@ -3,8 +3,8 @@ session_start();
 
 // Usuarios quemados
 $users = [
-    'admin' => 'hola', // Usuario administrador
-    'user' => '123'    // Usuario normal
+    'admin' => 'admin', // Usuario administrador
+    'user' => 'admin'    // Usuario normal
 ];
 
 $errorMessage = "";
