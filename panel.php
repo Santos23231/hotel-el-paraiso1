@@ -26,32 +26,8 @@ if (file_exists('reservas.txt')) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="css/panel.css" rel="stylesheet" />
     <!-- Custom CSS -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-        .sidebar {
-            height: 100vh;
-            background-color: #4e73df;
-            color: white;
-        }
-        .sidebar a {
-            color: white;
-            text-decoration: none;
-        }
-        .sidebar a:hover {
-            text-decoration: underline;
-        }
-        .topbar {
-            background-color: #f8f9fc;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .card {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-    </style>
 </head>
 <body>
     <div class="d-flex">
@@ -61,6 +37,7 @@ if (file_exists('reservas.txt')) {
             <ul class="list-unstyled">
                 
                 <li><a href="#" class="d-block py-2"><i class="fas fa-table"></i> Tables</a></li>
+                <li><a href="#" class="d-block py-2"><i class="fas fa-user"></i> </a></li>
             </ul>
         </div>
         <!-- Main Content -->

@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="css/servicios.css">
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/contacto.css" rel="stylesheet" />
+
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome -->
@@ -36,6 +37,18 @@
                             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalReserva">
                                 Reservar
                             </a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">
+                                <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                            </a>
+                        </li>
+                        <?php if (isset($_SESSION['usuario'])): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="logout.php">
+                                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                                </a>
+                            </li>
+                        <?php endif; ?>
                         </li>
                     </ul>
                 </div>
