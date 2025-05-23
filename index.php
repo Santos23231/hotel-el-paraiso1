@@ -436,7 +436,7 @@
                             <i class="fas fa-envelope fa-2x"></i>
                         </a>
                     </div>
-                    <p class="text-muted mb-0">hotelparaiso@g.mail.com</p>
+                    <p class="text-muted mb-0">hotelparaiso@gmail.com</p>
                 </div>
             </div>
             <!-- Formulario de contacto -->
