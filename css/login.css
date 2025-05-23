@@ -1,5 +1,5 @@
 body {
-    background: #f4f4f4;
+    background: #e0e0e0;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -7,10 +7,10 @@ body {
 }
 
 .login-container {
-    background: #fff;
+    background: #f7f7f7;
     padding: 2.5rem 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 24px rgba(60,60,60,0.08);
     max-width: 350px;
     width: 100%;
 }
@@ -22,33 +22,33 @@ body {
 
 .login-header h2 {
     font-weight: 700;
-    color: #222;
+    color: #343a40;
 }
 
 .form-label {
-    color: #333;
+    color: #343a40;
 }
 
 .form-control {
-    background: #fff;
+    background: #f0f0f0;
     color: #222;
-    border: 1px solid #ccc;
+    border: 1px solid #bbb;
 }
 
 .form-control:focus {
     border-color: #888;
-    box-shadow: 0 0 0 0.1rem rgba(0,0,0,0.04);
+    box-shadow: 0 0 0 0.1rem rgba(100,100,100,0.06);
 }
 
 .btn-primary {
-    background-color: #222;
+    background-color: #666;
     border: none;
     color: #fff;
     transition: background 0.2s;
 }
 
 .btn-primary:hover {
-    background-color: #444;
+    background-color: #343a40;
 }
 
 .text-danger {

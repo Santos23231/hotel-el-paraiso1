@@ -112,8 +112,8 @@
                     <h3 class="section-subheading text-muted">Explora nuestras opciones de desayuno, almuerzo y cena.</h3>
                 </div>
                 <div class="row">
-                    <h1>DESAYUNOS</h1>
-                        <h4 class="text-center">Desayuno</h4>
+                    <h1 class="text-center mb-4">DESAYUNOS</h1>
+                    <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/desayuno/comida1.jpg" alt="Desayuno">
                         <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
                     </div>
@@ -121,7 +121,6 @@
                         <img class="img-fluid rounded mb-3" src="./css/images/desayuno/comida2.jpg" alt="Desayuno">
                         <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
                     </div>
-
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/desayuno/comida3.jpg" alt="Desayuno">
                         <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
@@ -130,51 +129,44 @@
                         <img class="img-fluid rounded mb-3" src="./css/images/desayuno/comida4.jpg" alt="Desayuno">
                         <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
                     </div>
-                    <h1>ALMUERZOS</h1>
-                    <!-- Almuerzo -->
+                </div>
+                <div class="row">
+                    <h1 class="text-center mb-4">ALMUERZOS</h1>
                     <div class="col-lg-4 col-sm-6 mb-4">
-
                         <img class="img-fluid rounded mb-3" src="./css/images/almuerzo/comida6.jpg" alt="Almuerzo">
                         <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
                     </div>
-
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/almuerzo/comida7.jpg" alt="Almuerzo">
                         <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
                     </div>
-
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/almuerzo/comida8.jpg" alt="Almuerzo">
                         <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
                     </div>
-
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/almuerzo/comida9.jpg" alt="Almuerzo">
                         <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
                     </div>
-
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/almuerzo/comida10.jpg" alt="Almuerzo">
                         <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
                     </div>
-
-                    <h1>CENAS</h1>
-                    <!-- Cena -->
+                </div>
+                <div class="row">
+                    <h1 class="text-center mb-4">CENAS</h1>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/cena/cena1.jpg" alt="Cena">
                         <p class="text-muted text-center">Termina tu día con una cena inolvidable en nuestro restaurante.</p>
                     </div>
-
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/cena/cena2.jpg" alt="Cena">
                         <p class="text-muted text-center">Termina tu día con una cena inolvidable en nuestro restaurante.</p>
                     </div>
-
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/cena/cena3.jpg" alt="Cena">
                         <p class="text-muted text-center">Termina tu día con una cena inolvidable en nuestro restaurante.</p>
                     </div>
-
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/cena/cena4.jpg" alt="Cena">
                         <p class="text-muted text-center">Termina tu día con una cena inolvidable en nuestro restaurante.</p>
