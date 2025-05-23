@@ -32,10 +32,10 @@
                         <li class="nav-item"><a class="nav-link" href="#about">Acerca de Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about"></a></li>
-                        <!-- Botón de inicio de sesión -->
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalReserva">
+                                Reservar
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -329,7 +329,7 @@
         </div>
         <ul class="timeline">
             <li>
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="./css/images/emirates.jpg" alt="..." /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4>Hotel El Paraiso</h4>
@@ -339,7 +339,7 @@
                 </div>
             </li>
             <li class="timeline-inverted">
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="" alt="..." /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4>Mision del Hotel</h4>
@@ -371,7 +371,7 @@
                 </div>
             </li>
             <li class="timeline-inverted">
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="" alt="..." /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4>Visión del Hotel</h4>
@@ -380,17 +380,121 @@
                     <div class="timeline-body"><p class="text-muted">Ser el hotel de referencia en nuestra región, reconocido por la excelencia en servicio, la innovación en el turismo y nuestro compromiso con la sostenibilidad. Aspiramos a crecer y evolucionar, manteniendo siempre nuestra esencia de calidez y calidad.</p></div>
                 </div>
             </li>
-            <li class="timeline-inverted">
-                <div class="timeline-image">
-                    <h4>
-                        Be Part
-                        <br />+
-                        Of Our
-                        <br />
-                        Story!
-                    </h4>
-                </div>
-            </li>
         </ul>
     </div>
 </section>
+
+<!-- Nueva sección con tarjetas -->
+<section class="page-section bg-light" id="about">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Acerca de nosotros</h2>
+            <h3 class="section-subheading text-muted">Conoce más sobre nuestro hotel</h3>
+        </div>
+        <div class="row justify-content-center">
+            <!-- Historia -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 shadow">
+                    <img src="./css/images/emirates.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;object-fit:cover;" alt="Hotel El Paraiso">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Hotel El Paraiso</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Fundado en 2012</h6>
+                        <p class="card-text">Hotel el Paraiso nació del sueño de una familia apasionada por la hospitalidad. Todo comenzó con una pequeña casa frente al mar, donde recibían viajeros con un café caliente y una conversación acogedora. Con el tiempo, la demanda creció y la casa se transformó en un hotel, donde cada habitación refleja la esencia de la tranquilidad y el confort. Hoy, Hotel El Paraiso sigue siendo un refugio para quienes buscan descanso y momentos inolvidables, manteniendo la calidez con la que todo inició.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Misión -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 shadow">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;object-fit:cover;" alt="Misión">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Misión del Hotel</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">La mejor experiencia</h6>
+                        <p class="card-text">Brindar una experiencia única de hospitalidad, combinando confort, atención personalizada y un ambiente acogedor. Nos comprometemos a ofrecer servicios de alta calidad que hagan sentir a cada huésped como en casa, creando recuerdos inolvidables en cada estancia.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Redes Sociales -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 shadow">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;object-fit:cover;" alt="Redes Sociales">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Redes Sociales</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Síguenos en:</h6>
+                        <p class="card-text">
+                            <a href="https://www.facebook.com/HotelElParaiso" target="_blank" class="text-decoration-none d-block mb-1">
+                                <i class="fab fa-facebook-f"></i> Hotel El Paraiso
+                            </a>
+                            <a href="https://www.instagram.com/Hotel_Paraiso" target="_blank" class="text-decoration-none d-block mb-1">
+                                <i class="fab fa-instagram"></i> @Hotel_Paraiso
+                            </a>
+                            <a href="mailto:hotelparaiso@g.mail.com" class="text-decoration-none d-block">
+                                <i class="fas fa-envelope"></i> hotelparaiso@g.mail.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Visión -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 shadow">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;object-fit:cover;" alt="Visión">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Visión del Hotel</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Ofrecer una experiencia inolvidable</h6>
+                        <p class="card-text">Ser el hotel de referencia en nuestra región, reconocido por la excelencia en servicio, la innovación en el turismo y nuestro compromiso con la sostenibilidad. Aspiramos a crecer y evolucionar, manteniendo siempre nuestra esencia de calidez y calidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal de Reserva -->
+<div class="modal fade" id="modalReserva" tabindex="-1" aria-labelledby="modalReservaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <form action="guardar_reserva.php" method="POST">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalReservaLabel">Reservar Habitación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+    </div>
+    <div class="modal-body">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" required>
+        </div>
+        <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha de Reserva</label>
+            <input type="date" class="form-control" id="fecha" name="fecha" required>
+        </div>
+        <div class="mb-3">
+            <label for="habitacion" class="form-label">Tipo de Habitación</label>
+            <select class="form-select" id="habitacion" name="habitacion" required>
+                <option value="">Selecciona una habitación</option>
+                <option value="Habitación Deluxe">Habitación Deluxe</option>
+                <option value="Habitación Familiar">Habitación Familiar</option>
+                <option value="Suite Presidencial">Suite Presidencial</option>
+                <option value="Habitación Ejecutiva">Habitación Ejecutiva</option>
+                <option value="Habitación Doble">Habitación Doble</option>
+                <option value="Habitación Superior">Habitación Superior</option>
+                <option value="Habitación Premium">Habitación Premium</option>
+                <option value="Habitación de Lujo">Habitación de Lujo</option>
+            </select>
+        </div>
+        </div>
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Reservar</button>
+        </div>
+    </form>
+    </div>
+</div>
+</div>

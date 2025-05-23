@@ -1,13 +1,57 @@
-/* Estilo para los enlaces del menú de navegación */
-.nav-link {
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
+body {
+    background: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.nav-link:hover {
-    color: #f0ad4e; /* Cambia a un color destacado al pasar el cursor */
-    text-decoration: none;
+.login-container {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    max-width: 350px;
+    width: 100%;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-header h2 {
+    font-weight: 700;
+    color: #222;
+}
+
+.form-label {
+    color: #333;
+}
+
+.form-control {
+    background: #fff;
+    color: #222;
+    border: 1px solid #ccc;
+}
+
+.form-control:focus {
+    border-color: #888;
+    box-shadow: 0 0 0 0.1rem rgba(0,0,0,0.04);
+}
+
+.btn-primary {
+    background-color: #222;
+    border: none;
+    color: #fff;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #444;
+}
+
+.text-danger {
+    font-size: 0.95rem;
+    text-align: center;
 }

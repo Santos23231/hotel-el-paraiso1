@@ -10,12 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validar que todos los campos estén llenos
     if (!empty($nombre) && !empty($email) && !empty($telefono) && !empty($fecha) && !empty($habitacion)) {
         // Crear una línea de texto con los datos de la reserva
-        $reserva = "$nombre|$email|$telefono|$fecha|$habitacion\n";
+        $reserva = "$nombre | $email | $telefono | $fecha | $habitacion" . PHP_EOL;
 
         // Guardar la reserva en el archivo
         $filePath = 'reservas.txt';
         if (file_put_contents($filePath, $reserva, FILE_APPEND)) {
-            echo "Reserva guardada exitosamente.";
+            // Redirige de vuelta al index con un mensaje de éxito
+            header("Location: index.php?reserva=ok");
+            exit();
         } else {
             echo "Error: No se pudo guardar la reserva.";
         }
@@ -23,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Error: Todos los campos son obligatorios.";
     }
 } else {
-    echo "Error: Solicitud inválida.";
+    header("Location: index.php");
+    exit();
 }
 ?>

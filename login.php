@@ -3,8 +3,8 @@ session_start();
 
 // Usuarios quemados
 $users = [
-    'admin' => 'hola', // Usuario administrador
-    'user' => '123'    // Usuario normal
+    'admin' => 'admin', // Usuario administrador
+    'user' => 'admin'    // Usuario normal
 ];
 
 $errorMessage = "";
@@ -30,49 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(to right, #8e44ad, #3498db);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-        }
-        .login-container {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            width: 100%;
-            max-width: 400px;
-        }
-        .login-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .login-header h2 {
-            color: #8e44ad;
-            font-weight: bold;
-        }
-        .btn-primary {
-            background-color: #8e44ad;
-            border: none;
-        }
-        .btn-primary:hover {
-            background-color: #732d91;
-        }
-        .form-label {
-            color: #555;
-        }
-        .form-control {
-            border-radius: 5px;
-        }
-        .text-danger {
-            font-size: 0.9rem;
-            text-align: center;
-        }
-    </style>
+    <link href="css/login.css" rel="stylesheet">
 </head>
 <body>
     <div class="login-container">

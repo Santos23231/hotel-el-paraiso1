@@ -59,8 +59,7 @@ if (file_exists('reservas.txt')) {
         <div class="sidebar p-3">
             <h4 class="text-center">SB Admin</h4>
             <ul class="list-unstyled">
-                <li><a href="#" class="d-block py-2"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                <li><a href="#" class="d-block py-2"><i class="fas fa-chart-area"></i> Charts</a></li>
+                
                 <li><a href="#" class="d-block py-2"><i class="fas fa-table"></i> Tables</a></li>
             </ul>
         </div>
