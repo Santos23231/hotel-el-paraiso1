@@ -240,7 +240,7 @@
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion1.jpeg" alt="Habitación 1">
                     <div class="card-body">
-                        <h5 class="card-title">Habitación Deluxe</h5>
+                        <h5 class="card-title">Habitación 1</h5>
                         <p class="card-text">Disfruta de una experiencia única con vistas al mar y todas las comodidades.</p>
                     </div>
                 </div>
@@ -250,7 +250,7 @@
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion2.jpg" alt="Habitación 2">
                     <div class="card-body">
-                        <h5 class="card-title">Habitación Familiar</h5>
+                        <h5 class="card-title">Habitación 2</h5>
                         <p class="card-text">Ideal para familias, con espacio amplio y comodidades modernas.</p>
                     </div>
                 </div>
@@ -260,7 +260,7 @@
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion3.jpg" alt="Habitación 3">
                     <div class="card-body">
-                        <h5 class="card-title">Suite Presidencial</h5>
+                        <h5 class="card-title">Habitacion 3</h5>
                         <p class="card-text">La máxima expresión de lujo y confort para una estancia inolvidable.</p>
                     </div>
                 </div>
@@ -270,7 +270,7 @@
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion4.jpg" alt="Habitación 4">
                     <div class="card-body">
-                        <h5 class="card-title">Habitación Ejecutiva</h5>
+                        <h5 class="card-title">Habitación 4</h5>
                         <p class="card-text">Perfecta para viajes de negocios, con escritorio y servicios premium.</p>
                     </div>
                 </div>
@@ -280,7 +280,7 @@
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion5.jpg" alt="Habitación 5">
                     <div class="card-body">
-                        <h5 class="card-title">Habitación Doble</h5>
+                        <h5 class="card-title">Habitación 5</h5>
                         <p class="card-text">Espaciosa y cómoda, ideal para compartir con amigos o familiares.</p>
                     </div>
                 </div>
@@ -290,7 +290,7 @@
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion6.jpg" alt="Habitación 6">
                     <div class="card-body">
-                        <h5 class="card-title">Habitación Superior</h5>
+                        <h5 class="card-title">Habitación 6</h5>
                         <p class="card-text">Con vistas panorámicas y servicios exclusivos para una experiencia única.</p>
                     </div>
                 </div>
@@ -300,7 +300,7 @@
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion7.jpg" alt="Habitación 7">
                     <div class="card-body">
-                        <h5 class="card-title">Habitación Premium</h5>
+                        <h5 class="card-title">Habitación 7</h5>
                         <p class="card-text">Diseñada para el máximo confort, con detalles de lujo en cada rincón.</p>
                     </div>
                 </div>
@@ -310,7 +310,7 @@
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion8.jpg" alt="Habitación 8">
                     <div class="card-body">
-                        <h5 class="card-title">Habitación de Lujo</h5>
+                        <h5 class="card-title">Habitación 8</h5>
                         <p class="card-text">La opción más exclusiva, con servicios personalizados y decoración elegante.</p>
                     </div>
                 </div>
@@ -379,6 +379,11 @@
             <input type="text" class="form-control" id="nombre" name="nombre" required>
         </div>
         <div class="mb-3">
+            <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
+            <div id="edad-error" class="text-danger mt-1" style="display:none;"></div>
+        </div>
+        <div class="mb-3">
             <label for="email" class="form-label">Correo electrónico</label>
             <input type="email" class="form-control" id="email" name="email" required>
         </div>
@@ -387,22 +392,12 @@
             <input type="text" class="form-control" id="telefono" name="telefono" required>
         </div>
         <div class="mb-3">
-            <label for="fecha" class="form-label">Fecha de Reserva</label>
+            <label for="fecha" class="form-label">Fecha de Entrada</label>
             <input type="date" class="form-control" id="fecha" name="fecha" required>
         </div>
         <div class="mb-3">
-            <label for="habitacion" class="form-label">Tipo de Habitación</label>
-            <select class="form-select" id="habitacion" name="habitacion" required>
-                <option value="">Selecciona una habitación</option>
-                <option value="Habitación Deluxe">Habitación Deluxe</option>
-                <option value="Habitación Familiar">Habitación Familiar</option>
-                <option value="Suite Presidencial">Suite Presidencial</option>
-                <option value="Habitación Ejecutiva">Habitación Ejecutiva</option>
-                <option value="Habitación Doble">Habitación Doble</option>
-                <option value="Habitación Superior">Habitación Superior</option>
-                <option value="Habitación Premium">Habitación Premium</option>
-                <option value="Habitación de Lujo">Habitación de Lujo</option>
-            </select>
+            <label for="fecha_salida" class="form-label">Fecha de Salida</label>
+            <input type="date" class="form-control" id="fecha_salida" name="fecha_salida" required>
         </div>
         </div>
         <div class="modal-footer">
@@ -459,4 +454,31 @@
             </div>
         </div>
     </div>
+
 </section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('#modalReserva form');
+    const fechaNacimiento = document.getElementById('fecha_nacimiento');
+    const edadError = document.getElementById('edad-error');
+
+    form.addEventListener('submit', function(e) {
+        const fecha = new Date(fechaNacimiento.value);
+        const hoy = new Date();
+        let edad = hoy.getFullYear() - fecha.getFullYear();
+        const m = hoy.getMonth() - fecha.getMonth();
+        if (m < 0 || (m === 0 && hoy.getDate() < fecha.getDate())) {
+            edad--;
+        }
+        if (edad < 18) {
+            e.preventDefault();
+            edadError.textContent = "No puede hacer una reservación porque es menor de edad.";
+            edadError.style.display = "block";
+            fechaNacimiento.classList.add('is-invalid');
+        } else {
+            edadError.style.display = "none";
+            fechaNacimiento.classList.remove('is-invalid');
+        }
+    });
+});
+</script>

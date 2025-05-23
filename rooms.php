@@ -30,9 +30,7 @@ if (file_exists('reservas.txt')) {
     <!-- Custom CSS -->
 </head>
 <body>
-    
-        <!-- Sidebar -->
-        <div class="d-flex">
+    <div class="d-flex">
         <!-- Sidebar -->
         <div class="sidebar p-3">
             <h4 class="text-center">SB Admin</h4>
@@ -58,53 +56,50 @@ if (file_exists('reservas.txt')) {
                     </ul>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card text-white bg-info mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Reservas Totales</h5>
-                        <p class="card-text"><?php echo count($reservas); ?></p>    
-                    </div>
-                </div>  
-            </div>
-            <!-- Reservations Table -->
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Reservas</h5>
-                    <div class="d-flex justify-content-center"> <!-- Añadido para centrar -->
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover table-striped">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Email</th>
-                                        <th>Teléfono</th>
-                                        <th>Fecha</th>
-                                        <th>Habitación</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php if (!empty($reservas)): ?>
-                                        <?php foreach ($reservas as $reserva): ?>
-                                            <tr>
-                                                <td><?php echo htmlspecialchars($reserva[0]); ?></td>
-                                                <td><?php echo htmlspecialchars($reserva[1]); ?></td>
-                                                <td><?php echo htmlspecialchars($reserva[2]); ?></td>
-                                                <td><?php echo htmlspecialchars($reserva[3]); ?></td>
-                                                <td><?php echo htmlspecialchars($reserva[4]); ?></td>
-                                            </tr>
-                                        <?php endforeach; ?>
-                                    <?php else: ?>
-                                        <tr>
-                                            <td colspan="5" class="text-center">No hay reservas.</td>
-                                        </tr>
-                                    <?php endif; ?>
-                                </tbody>
-                            </table>
+            <!-- Rooms Section -->
+<div class="card mt-4">
+    <div class="card-body">
+        <h5 class="card-title text-center">Habitaciones</h5>
+        <div class="row g-3 justify-content-center">
+            <?php
+            // Simulación de habitaciones (puedes reemplazar esto por consulta a BD)
+            $habitaciones = [
+                ['id' => 1, 'estado' => 'disponible', 'nombre' => '', 'total' => 0],
+                ['id' => 2, 'estado' => 'ocupada', 'nombre' => 'Carlos M.', 'total' => 700],
+                ['id' => 3, 'estado' => 'disponible', 'nombre' => '', 'total' => 0],
+                ['id' => 4, 'estado' => 'ocupada', 'nombre' => 'Ana R.', 'total' => 900],
+                ['id' => 5, 'estado' => 'disponible', 'nombre' => '', 'total' => 0],
+                ['id' => 6, 'estado' => 'disponible', 'nombre' => '', 'total' => 0],
+                ['id' => 7, 'estado' => 'ocupada', 'nombre' => 'Jorge L.', 'total' => 1050],
+                ['id' => 8, 'estado' => 'disponible', 'nombre' => '', 'total' => 0],
+            ];
+
+            foreach ($habitaciones as $hab):
+                $bgColor = ($hab['estado'] === 'disponible') ? 'bg-success' : 'bg-danger';
+                $textColor = 'text-white';
+                ?>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card shadow-sm border-0 rounded-3 h-100">
+                        <div class="card-header <?= $bgColor ?> <?= $textColor ?> text-center">
+                            <strong>Hab. <?= $hab['id'] ?></strong> - <?= ucfirst($hab['estado']) ?>
+                        </div>
+                        <div class="card-body text-center">
+                            <?php if ($hab['estado'] === 'ocupada'): ?>
+                                <p><strong>Huésped:</strong> <?= htmlspecialchars($hab['nombre']) ?></p>
+                                <p><strong>Total a pagar:</strong> Q.<?= number_format($hab['total'], 2) ?></p>
+                            <?php else: ?>
+                                <p class="text-muted">Habitación disponible</p>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
         </div>
+    </div>
+</div>
+            
+            <!-- Reservations Table -->
+            
     </div>
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
