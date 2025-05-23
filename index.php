@@ -12,6 +12,7 @@
         <link href="css/about.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/servicios.css">
         <link href="css/style.css" rel="stylesheet" />
+        <link href="css/contacto.css" rel="stylesheet" />
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome -->
@@ -30,7 +31,6 @@
                         <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Habitaciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Acerca de Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalReserva">
@@ -306,72 +306,7 @@
     </div>
 </section>
 
-
-<!-- About -->
-<section class="page-section" id="about">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Acerca de nosotros </h2>
-            <h3 class="section-subheading text-muted">Vive la mejor experiencia en nuestro hotel..</h3>
-        </div>
-        <ul class="timeline">
-            <li>
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="./css/images/emirates.jpg" alt="..." /></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4>Hotel El Paraiso</h4>
-                        <h4 class="subheading"> Fundando en 2012</h4>
-                    </div>
-                    <div class="timeline-body"><p class="text-muted">Hotel el Paraiso nació del sueño de una familia apasionada por la hospitalidad. Todo comenzó con una pequeña casa frente al mar, donde recibían viajeros con un café caliente y una conversación acogedora. Con el tiempo, la demanda creció y la casa se transformó en un hotel, donde cada habitación refleja la esencia de la tranquilidad y el confort. Hoy, Hotel El Paraiso sigue siendo un refugio para quienes buscan descanso y momentos inolvidables, manteniendo la calidez con la que todo inició</p></div>
-                </div>
-            </li>
-            <li class="timeline-inverted">
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="" alt="..." /></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4>Mision del Hotel</h4>
-                        <h4 class="subheading">La mejor experiencia</h4>
-                    </div>
-                    <div class="timeline-body"><p class="text-muted">Brindar una experiencia única de hospitalidad, combinando confort, atención personalizada y un ambiente acogedor. Nos comprometemos a ofrecer servicios de alta calidad que hagan sentir a cada huésped como en casa, creando recuerdos inolvidables en cada estancia.</p></div>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4>REDES SOCIALES</h4>
-                        <h4 class="subheading">Síguenos en:</h4>
-                    </div>
-                    <div class="timeline-body">
-                        <p class="text-muted">
-                            <a href="https://www.facebook.com/HotelElParaiso" target="_blank" class="text-decoration-none">
-                                <i class="fab fa-facebook-f"></i> Hotel El Paraiso
-                            </a><br>
-                            <a href="https://www.instagram.com/Hotel_Paraiso" target="_blank" class="text-decoration-none">
-                                <i class="fab fa-instagram"></i> @Hotel_Paraiso
-                            </a><br>
-                            <a href="mailto:hotelparaiso@g.mail.com" class="text-decoration-none">
-                                <i class="fas fa-envelope"></i> hotelparaiso@g.mail.com
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </li>
-            <li class="timeline-inverted">
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="" alt="..." /></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4>Visión del Hotel</h4>
-                        <h4 class="subheading">Ofrecer una experiencia inolvidable.</h4>
-                    </div>
-                    <div class="timeline-body"><p class="text-muted">Ser el hotel de referencia en nuestra región, reconocido por la excelencia en servicio, la innovación en el turismo y nuestro compromiso con la sostenibilidad. Aspiramos a crecer y evolucionar, manteniendo siempre nuestra esencia de calidez y calidad.</p></div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</section>
-
-<!-- Nueva sección con tarjetas -->
+<!-- Acerca de nosotros -->
 <section class="page-section bg-light" id="about">
     <div class="container">
         <div class="text-center">
@@ -398,27 +333,6 @@
                         <h5 class="card-title">Misión del Hotel</h5>
                         <h6 class="card-subtitle mb-2 text-muted">La mejor experiencia</h6>
                         <p class="card-text">Brindar una experiencia única de hospitalidad, combinando confort, atención personalizada y un ambiente acogedor. Nos comprometemos a ofrecer servicios de alta calidad que hagan sentir a cada huésped como en casa, creando recuerdos inolvidables en cada estancia.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Redes Sociales -->
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="card h-100 shadow">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;object-fit:cover;" alt="Redes Sociales">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Redes Sociales</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Síguenos en:</h6>
-                        <p class="card-text">
-                            <a href="https://www.facebook.com/HotelElParaiso" target="_blank" class="text-decoration-none d-block mb-1">
-                                <i class="fab fa-facebook-f"></i> Hotel El Paraiso
-                            </a>
-                            <a href="https://www.instagram.com/Hotel_Paraiso" target="_blank" class="text-decoration-none d-block mb-1">
-                                <i class="fab fa-instagram"></i> @Hotel_Paraiso
-                            </a>
-                            <a href="mailto:hotelparaiso@g.mail.com" class="text-decoration-none d-block">
-                                <i class="fas fa-envelope"></i> hotelparaiso@g.mail.com
-                            </a>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -485,3 +399,51 @@
     </div>
 </div>
 </div>
+
+<!-- contacto -->
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-heading text-uppercase">Contacto</h2>
+            <h3 class="section-subheading text-muted">¿Tienes dudas o quieres reservar? ¡Contáctanos o síguenos en redes sociales!</h3>
+        </div>
+        <div class="row justify-content-center">
+            <!-- Redes Sociales -->
+            <div class="col-md-5 mb-4">
+                <div class="card h-100 shadow text-center p-4">
+                    <h5 class="card-title mb-3">Síguenos en redes sociales</h5>
+                    <div class="d-flex justify-content-center mb-3">
+                        <a href="https://www.facebook.com/HotelElParaiso" target="_blank" class="btn btn-outline-primary btn-lg mx-2" title="Facebook">
+                            <i class="fab fa-facebook-f fa-2x"></i>
+                        </a>
+                        <a href="https://www.instagram.com/Hotel_Paraiso" target="_blank" class="btn btn-outline-danger btn-lg mx-2" title="Instagram">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                        <a href="mailto:hotelparaiso@g.mail.com" class="btn btn-outline-secondary btn-lg mx-2" title="Correo">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </a>
+                    </div>
+                    <p class="text-muted mb-0">hotelparaiso@g.mail.com</p>
+                </div>
+            </div>
+            <!-- Formulario de contacto -->
+            <div class="col-md-7 mb-4">
+                <div class="card h-100 shadow p-4">
+                    <h5 class="card-title mb-3">Envíanos un mensaje</h5>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="3" placeholder="Escribe tu mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
