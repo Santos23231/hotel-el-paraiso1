@@ -33,7 +33,7 @@ if (file_exists('reservas.txt')) {
     <div class="d-flex">
         <!-- Sidebar -->
         <div class="sidebar p-3">
-            <h4 class="text-center">SB Admin</h4>
+            <h4 class="text-center">ADMINISTRADOR</h4>
             <ul class="list-unstyled">
                 
                 <li><a href="#" class="d-block py-2"><i class="fas fa-table"></i> Tables</a></li>
