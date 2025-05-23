@@ -113,32 +113,27 @@
                 </div>
                 <div class="row">
                     <h1>DESAYUNOS</h1>
-                    <!-- Desayuno -->
-                    <div class="col-lg-4 col-sm-6 mb-4">
                         <h4 class="text-center">Desayuno</h4>
                         <img class="img-fluid rounded mb-3" src="./css/images/desayuno/comida1.jpg" alt="Desayuno">
                         <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <h4 class="text-center">Desayuno</h4>
                         <img class="img-fluid rounded mb-3" src="./css/images/desayuno/comida2.jpg" alt="Desayuno">
                         <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
                     </div>
 
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <h4 class="text-center">Desayuno</h4>
                         <img class="img-fluid rounded mb-3" src="./css/images/desayuno/comida3.jpg" alt="Desayuno">
                         <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <h4 class="text-center">Desayuno</h4>
                         <img class="img-fluid rounded mb-3" src="./css/images/desayuno/comida4.jpg" alt="Desayuno">
                         <p class="text-muted text-center">Empieza tu día con nuestras deliciosas opciones de desayuno.</p>
                     </div>
                     <h1>ALMUERZOS</h1>
                     <!-- Almuerzo -->
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <h4 class="text-center">Almuerzo</h4>
+
                         <img class="img-fluid rounded mb-3" src="./css/images/almuerzo/comida6.jpg" alt="Almuerzo">
                         <p class="text-muted text-center">Disfruta de un almuerzo exquisito con platos locales e internacionales.</p>
                     </div>
