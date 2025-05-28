@@ -1,0 +1,51 @@
+/* Ocultar la sección del menú por defecto */
+#menu-restaurante {
+    display: none;
+}
+
+/* Mostrar la sección del menú cuando sea el objetivo (target) */
+#menu-restaurante:target {
+    display: block;
+}
+
+/* Ocultar todas las secciones por defecto */
+#almuerzo,
+#cena,
+#bebidas {
+    display: none;
+}
+
+/* Mostrar la sección correspondiente cuando sea el objetivo (target) */
+#almuerzo:target,
+#cena:target,
+#bebidas:target {
+    display: block;
+}
+
+/* Estilo general para las imágenes del menú */
+#menu-restaurante img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Estilo general para las imágenes */
+#almuerzo img,
+#cena img,
+#bebidas img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover para las imágenes */
+#menu-restaurante img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto hover para las imágenes */
+#almuerzo img:hover,
+#cena img:hover,
+#bebidas img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
