@@ -11,7 +11,7 @@ services:
       MYSQL_USER: user_hotel
       MYSQL_PASSWORD: hotel123
     ports:
-      - "3307:3306"   # Acceso remoto a la BD
+      - "3307:3306"
     volumes:
       - ../DB-Hotel:/docker-entrypoint-initdb.d
       - mysql_data:/var/lib/mysql
@@ -28,6 +28,7 @@ services:
       - "8080:80"
     volumes:
       - ../dark:/var/www/html
+      - ../light:/var/www/light  # Compartimos light/ para acceder a db.php
     depends_on:
       - mysql-db
     networks:
