@@ -29,7 +29,7 @@ if (file_exists('reservas.txt')) {
     <link href="css/panel.css" rel="stylesheet" />
     <!-- Custom CSS -->
 </head>
-<body>
+<body>  
     
         <!-- Sidebar -->
         <div class="d-flex">
