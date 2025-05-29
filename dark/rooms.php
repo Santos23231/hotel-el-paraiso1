@@ -107,48 +107,32 @@ $total_habitaciones = 8;
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <input type="hidden" name="habitacion" value="">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Nombre del huésped</label>
-                                                        <input type="text" class="form-control" name="nombre" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">NIT</label>
-                                                        <input type="text" class="form-control" name="nit" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Fecha de nacimiento</label>
-                                                        <input type="date" class="form-control" name="fecha_nacimiento" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Fecha de registro</label>
-                                                        <input type="date" class="form-control" name="fecha_registro" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Total a pagar</label>
-                                                        <input type="number" class="form-control" name="total" required>
-                                                    </div>
-                                                    <!-- Campos adicionales -->
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Teléfono</label>
-                                                        <input type="text" class="form-control" name="telefono" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Correo electrónico</label>
-                                                        <input type="email" class="form-control" name="correo" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Dirección</label>
-                                                        <input type="text" class="form-control" name="direccion" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Género</label>
-                                                        <select class="form-control" name="genero" required>
-                                                            <option value="">Seleccione</option>
-                                                            <option value="M">Masculino</option>
-                                                            <option value="F">Femenino</option>
-                                                            <option value="O">Otro</option>
-                                                        </select>
+                                                    <input type="hidden" name="habitacion" value="<?php echo $i; ?>">
+                                                    <div class="row g-2">
+                                                        <div class="col-12 mb-2">
+                                                            <label for="nombre" class="form-label">Nombre del huésped</label>
+                                                            <input type="text" class="form-control" name="nombre" required>
+                                                        </div>
+                                                        <div class="col-md-6 mb-2">
+                                                            <label for="email" class="form-label">Email</label>
+                                                            <input type="email" class="form-control" name="email" required>
+                                                        </div>
+                                                        <div class="col-md-6 mb-2">
+                                                            <label for="telefono" class="form-label">Teléfono</label>
+                                                            <input type="text" class="form-control" name="telefono" required>
+                                                        </div>
+                                                        <div class="col-md-6 mb-2">
+                                                            <label for="fecha" class="form-label">Fecha de reserva</label>
+                                                            <input type="date" class="form-control" name="fecha" required>
+                                                        </div>
+                                                        <div class="col-md-6 mb-2">
+                                                            <label for="fecha_salida" class="form-label">Fecha de salida</label>
+                                                            <input type="date" class="form-control" name="fecha_salida" required>
+                                                        </div>
+                                                        <div class="col-md-6 mb-2">
+                                                            <label for="total" class="form-label">Total a pagar</label>
+                                                            <input type="number" class="form-control" name="total" required>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
