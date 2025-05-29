@@ -3,7 +3,7 @@ session_start();
 
 // Usuarios quemados
 $users = [
-    'admin' => 'admin', // Usuario administrador
+ // Usuario administrador
     'user' => 'admin'    // Usuario normal
 ];
 
