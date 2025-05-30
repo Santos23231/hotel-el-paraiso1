@@ -1,38 +1,17 @@
 <?php
+// private/db.php
 
-$host = 'mysql-db';
-$dbname = 'Hotel_Paraiso';
-$user = 'user_hotel';
-$password = 'hotel123';
-$port = 3306;
+$host = "mysql-db";       // Nombre del servicio en docker-compose
+$user = "user_hotel";     // Usuario definido en MYSQL_USER
+$password = "hotel123";   // Contraseña definida en MYSQL_PASSWORD
+$database = "Hotel_Paraiso";
+$port = 3306;             // Puerto interno del contenedor MySQL
 
-$dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+$conn = new mysqli($host, $user, $password, $database, $port);
 
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, // Lanza excepciones en caso de error
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,     // Establece el modo de obtención predeterminado a asociativo
-    PDO::ATTR_EMULATE_PREPARES   => false,                // Deshabilita la emulación de sentencias preparadas para mayor seguridad
-];
-
-try {
-    $pdo = new PDO($dsn, $user, $password, $options);
-    echo "¡Conexión a la base de datos exitosa!";
-
-    // Aquí puedes realizar tus operaciones con la base de datos
-    // Por ejemplo, una consulta SELECT:
-    // $stmt = $pdo->query("SELECT * FROM tu_tabla");
-    // while ($row = $stmt->fetch()) {
-    //     echo $row['nombre_columna'] . "<br>";
-    // }
-
-} catch (PDOException $e) {
-    // Manejo de errores: Registra el error y muestra un mensaje amigable al usuario
-    // En un entorno de producción, nunca muestres el error directamente al usuario
-    error_log("Error de conexión a la base de datos: " . $e->getMessage());
-    die("Lo sentimos, no pudimos conectar con la base de datos en este momento. Por favor, inténtelo de nuevo más tarde.");
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Opcional: Cerrar la conexión (no siempre es necesario con PDO, ya que se cierra automáticamente al finalizar el script)
-$pdo = null;
-
+$conn->set_charset("utf8mb4");
 ?>

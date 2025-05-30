@@ -1,70 +1,58 @@
 <?php
 session_start();
 
-// Usuarios quemados
-$users = [
- // Usuario administrador
-    'user' => 'admin'    // Usuario normal
-];
 
-$errorMessage = "";
+require_once __DIR__ . '/db.php';
+
+$error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $usuario = $_POST['username'];
+    $contrasena = $_POST['password'];
 
-    // Validar credenciales
-    if (isset($users[$username]) && $users[$username] === $password) {
-        $_SESSION['username'] = $username;
-        header("Location: panel.php");
+    $sql = "SELECT * FROM Usuarios WHERE nombre_usuario = '$usuario' AND contrasena = '$contrasena'";
+    $resultado = $conn->query($sql);
+
+    if ($resultado->num_rows == 1) {
+        // Usuario autenticado
+        $_SESSION['username'] = $usuario;
+        header("Location: panel.php"); 
         exit();
     } else {
-        $errorMessage = "Usuario o contraseña incorrectos.";
+        $error = "Usuario o contraseña incorrectos.";
     }
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
+    <title>Iniciar Sesión</title>
+    <style>
+        body { font-family: Arial; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .login-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 300px; }
+        .login-container h2 { text-align: center; margin-bottom: 20px; }
+        input[type="text"], input[type="password"] { width: 100%; padding: 10px; margin: 8px 0 15px; border: 1px solid #ccc; border-radius: 4px; }
+        button { width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .error { color: red; text-align: center; margin-bottom: 15px; }
+    </style>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-header">
-            <h2>Iniciar Sesión</h2>
-        </div>
-        <form id="loginForm" method="post">
-            <div class="mb-3">
-                <label for="username" class="form-label">Usuario</label>
-                <input 
-                    type="text" 
-                    class="form-control" 
-                    id="username" 
-                    name="username" 
-                    placeholder="Ingresa tu usuario" 
-                    required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input 
-                    type="password" 
-                    class="form-control" 
-                    id="password" 
-                    name="password" 
-                    placeholder="Ingresa tu contraseña" 
-                    required>
-            </div>
-            <?php if (!empty($errorMessage)): ?>
-                <div class="text-danger mb-3">
-                    <?php echo $errorMessage; ?>
-                </div>
-            <?php endif; ?>
-            <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
-        </form>
-    </div>
+
+<div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    
+    <?php if (!empty($error)): ?>
+        <div class="error"><?= $error ?></div>
+    <?php endif; ?>
+
+    <form method="POST" action="">
+        <input type="text" name="username" placeholder="Usuario" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Entrar</button>
+    </form>
+</div>
+
 </body>
 </html>

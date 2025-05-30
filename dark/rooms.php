@@ -1,179 +1,208 @@
 <?php
 session_start();
 
-// Verificar si el usuario está autenticado
+// Verificar autenticación
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
 
-// Leer reservas desde el archivo
+// Incluir conexión a la base de datos
+require_once __DIR__ . '/db.php';
+
+// Leer todas las reservas desde la base de datos
 $reservas = [];
-if (file_exists('reservas.txt')) {
-    $lines = file('reservas.txt', FILE_IGNORE_NEW_LINES);
-    foreach ($lines as $line) {
-        $reservas[] = explode('|', $line);
+$sql = "SELECT * FROM reservas";
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $reservas[$row['numero_habitacion']] = $row;
     }
 }
 
-// Leer reservas
-$reservas = [];
-if (file_exists('reservas.txt')) {
-    $lines = file('reservas.txt', FILE_IGNORE_NEW_LINES);
-    foreach ($lines as $line) {
-        $data = explode('|', $line);
-        // $data[4] es el número de habitación
-        $reservas[$data[4]] = $data;
-    }
-}
+$conn->close();
 
 // Número total de habitaciones
 $total_habitaciones = 8;
+
+// Orden de habitaciones: las más cerca de la salida son las menores (ej. 1, 2, 3...)
+$habitaciones_ordenadas = range(1, $total_habitaciones);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <title>Habitaciones - Hotel El Paraíso</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Administración</title>
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="css/panel.css" rel="stylesheet" />
-    <!-- Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"  rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"  rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .room-card {
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .room-card:hover {
+            transform: scale(1.03);
+        }
+
+        .room-title {
+            font-size: 1.2rem;
+        }
+
+        .room-content {
+            font-size: 0.95rem;
+        }
+
+        .bg-success {
+            background-color: #28a745 !important;
+        }
+
+        .bg-danger {
+            background-color: #dc3545 !important;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #6c757d;
+        }
+    </style>
 </head>
 <body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <div class="sidebar p-3">
-            <h4 class="text-center">SB Admin</h4>
-            <ul class="list-unstyled">
-                
-                <li><a href="panel.php" class="d-block py-2"><i class="fas fa-table"></i> Tables</a></li>
-                <li><a href="rooms.php" class="d-block py-2"><i class="fas fa-user"></i> Habitaciones</a></li>
-                
-            </ul>
-        </div>
-        
-        <!-- Main Content -->
-        <div class="flex-grow-1">
-            <!-- Topbar -->
-            <div class="topbar d-flex justify-content-between align-items-center">
-                <h5>Panel de Administración</h5>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        Usuario
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Rooms Section -->
-            <div class="container mt-4">
-                <h2 class="text-center mb-4">Habitaciones</h2>
-                <div class="row">
-                    <?php for ($i = 1; $i <= $total_habitaciones; $i++): ?>
-                        <div class="col-md-3 mb-4">
-                            <?php if (isset($reservas[$i])): ?>
-                                <!-- Habitación ocupada -->
-                                <div class="card text-white bg-danger h-100">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Hab. <?php echo $i; ?> - Ocupada</h5>
-                                        <p><strong>Huésped:</strong> <?php echo htmlspecialchars($reservas[$i][0]); ?></p>
-                                        <p><strong>Total a pagar:</strong> Q.<?php echo htmlspecialchars($reservas[$i][5]); ?></p>
-                                    </div>
-                                </div>
-                            <?php else: ?>
-                                <!-- Habitación disponible -->
-                                <div class="card text-white bg-success h-100">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Hab. <?php echo $i; ?> - Disponible</h5>
-                                        <p>Habitación disponible</p>
-                                        <!-- Botón para agregar usuario -->
-                                        <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#agregarUsuarioModal<?php echo $i; ?>">
-                                            Agregar usuario
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- Modal para agregar usuario -->
-                                <div class="modal fade" id="agregarUsuarioModal<?php echo $i; ?>" tabindex="-1" aria-labelledby="agregarUsuarioModal<?php echo $i; ?>Label" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <form action="agregar_usuario.php" method="POST">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="agregarUsuarioModal<?php echo $i; ?>Label">Agregar usuario a Hab. <?php echo $i; ?></h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+
+<div class="d-flex">
+    <!-- Sidebar -->
+    <nav class="bg-dark text-white p-3" style="width: 250px; min-height: 100vh;">
+        <h4 class="text-center">Hotel El Paraíso</h4>
+        <ul class="list-unstyled mt-4">
+            <li><a href="panel.php" class="text-white d-block py-2"><i class="fas fa-table"></i> Panel</a></li>
+            <li><a href="rooms.php" class="text-white d-block py-2 active"><i class="fas fa-door-open"></i> Habitaciones</a></li>
+            <li><a href="logout.php" class="text-white d-block py-2"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex-grow-1 p-4">
+        <header class="mb-4">
+            <h2 class="text-center">Habitaciones</h2>
+            <p class="text-center text-muted">Asigne o consulte el estado de cada habitación</p>
+        </header>
+
+        <div class="row g-4 justify-content-center">
+            <?php foreach ($habitaciones_ordenadas as $num): ?>
+                <div class="col-md-3">
+                    <?php if (isset($reservas[$num])): ?>
+                        <!-- Habitación ocupada -->
+                        <div class="card room-card text-white bg-danger h-100">
+                            <div class="card-body text-center">
+                                <h5 class="card-title room-title">Hab. <?= $num ?></h5>
+                                <p class="card-text room-content"><strong>Huésped:</strong> <?= htmlspecialchars($reservas[$num]['nombre']) ?></p>
+                                <p class="card-text room-content"><strong>Total a pagar:</strong> Q.<?= number_format($reservas[$num]['total_a_pagar'], 2) ?></p>
+                            </div>
+                        </div>
+                    <?php else: ?>
+                        <!-- Habitación disponible -->
+                        <div class="card room-card text-white bg-success h-100">
+                            <div class="card-body text-center">
+                                <h5 class="card-title room-title">Hab. <?= $num ?></h5>
+                                <p class="card-text room-content">Disponible</p>
+                                <button class="btn btn-light btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#agregarUsuarioModal<?= $num ?>">
+                                    Asignar Huésped
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Modal para asignar huésped -->
+                        <div class="modal fade" id="agregarUsuarioModal<?= $num ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <form action="agregar_usuario.php" method="POST">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Asignar Huésped - Hab. <?= $num ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <input type="hidden" name="habitacion" value="<?= $num ?>">
+
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label for="nombre" class="form-label">Nombre Completo</label>
+                                                    <input type="text" class="form-control" name="nombre" required>
                                                 </div>
-                                                <div class="modal-body">
-                                                    <input type="hidden" name="habitacion" value="<?php echo $i; ?>">
-                                                    <div class="row g-2">
-                                                        <div class="col-12 mb-2">
-                                                            <label for="nombre" class="form-label">Nombre del huésped</label>
-                                                            <input type="text" class="form-control" name="nombre" required>
-                                                        </div>
-                                                        <div class="col-md-6 mb-2">
-                                                            <label for="email" class="form-label">Email</label>
-                                                            <input type="email" class="form-control" name="email" required>
-                                                        </div>
-                                                        <div class="col-md-6 mb-2">
-                                                            <label for="telefono" class="form-label">Teléfono</label>
-                                                            <input type="text" class="form-control" name="telefono" required>
-                                                        </div>
-                                                        <div class="col-md-6 mb-2">
-                                                            <label for="fecha" class="form-label">Fecha de reserva</label>
-                                                            <input type="date" class="form-control" name="fecha" required>
-                                                        </div>
-                                                        <div class="col-md-6 mb-2">
-                                                            <label for="fecha_salida" class="form-label">Fecha de salida</label>
-                                                            <input type="date" class="form-control" name="fecha_salida" required>
-                                                        </div>
-                                                        <div class="col-md-6 mb-2">
-                                                            <label for="total" class="form-label">Total a pagar</label>
-                                                            <input type="number" class="form-control" name="total" required>
-                                                        </div>
-                                                    </div>
+                                                <div class="col-md-6">
+                                                    <label for="nit" class="form-label">NIT</label>
+                                                    <input type="text" class="form-control" name="nit" required>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                                <div class="col-md-6">
+                                                    <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                                                    <input type="date" class="form-control" name="fecha_nacimiento" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="fecha_registro" class="form-label">Fecha de Registro</label>
+                                                    <input type="date" class="form-control" name="fecha_registro" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="telefono" class="form-label">Teléfono</label>
+                                                    <input type="text" class="form-control" name="telefono">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="email" class="form-label">Email</label>
+                                                    <input type="email" class="form-control" name="email">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="desayuno" class="form-label">Desayuno</label>
+                                                    <input type="number" class="form-control" name="desayuno" placeholder="Cantidad">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="almuerzo" class="form-label">Almuerzo</label>
+                                                    <input type="number" class="form-control" name="almuerzo" placeholder="Cantidad">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="cena" class="form-label">Cena</label>
+                                                    <input type="number" class="form-control" name="cena" placeholder="Cantidad">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="spa" class="form-label">Spa</label>
+                                                    <input type="number" class="form-control" name="spa" placeholder="Cantidad">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="masaje" class="form-label">Masaje</label>
+                                                    <input type="number" class="form-control" name="masaje" placeholder="Cantidad">
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                        </div>
                                     </div>
-                                </div>
-                            <?php endif; ?>
+                                </form>
+                            </div>
                         </div>
-                    <?php endfor; ?>
+                    <?php endif; ?>
                 </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // Chart.js Example
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
-                datasets: [{
-                    label: 'Ganancias',
-                    data: [5000, 10000, 15000, 20000, 25000, 30000, 40000],
-                    borderColor: 'rgba(78, 115, 223, 1)',
-                    backgroundColor: 'rgba(78, 115, 223, 0.1)',
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false
-            }
-        });
-    </script>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>&copy; 2025 Hotel El Paraíso | Técnico en Desarrollo de Software - Universidad Mesoamericana</p>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> 
 </body>
 </html>

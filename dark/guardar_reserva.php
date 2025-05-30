@@ -1,37 +1,67 @@
 <?php
-$mysqli = new mysqli("127.0.0.1", "root", "hotel123", "Hotel", 3306);
-if ($mysqli->connect_errno) {
-    die("Fallo la conexión: " . $mysqli->connect_error);
+session_start();
+
+// Incluir conexión a la base de datos
+require_once __DIR__. '/db.php';
+
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
 }
 
-// Recibe datos del formulario
-$nombre = $_POST['nombre'];
-$fechanac = $_POST['fechanac'];
-$correo = $_POST['correo'];
-$telefono = $_POST['telefono'];
-$id_habitacion = $_POST['id_habitacion'];
-$fecha_inicio = $_POST['fecha_inicio'];
-$fecha_fin = $_POST['fecha_fin'];
+// Recibir datos del formulario
+$nombre = $_POST['nombre'] ?? '';
+$fechanac = $_POST['fecha_nacimiento'] ?? '';
+$correo = $_POST['email'] ?? '';
+$telefono = $_POST['telefono'] ?? '';
+$fecha_inicio = $_POST['checkin'] ?? '';
+$fecha_fin = $_POST['checkout'] ?? '';
 
-// 1. Insertar huésped (si no existe)
-$stmt = $mysqli->prepare("INSERT INTO Huesped (nombre, fechanac, correo, telefono) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("ssss", $nombre, $fechanac, $correo, $telefono);
-if (!$stmt->execute()) {
-    // Si el correo ya existe, obtener el id_huesped existente
-    $result = $mysqli->query("SELECT id_huesped FROM Huesped WHERE correo='$correo'");
-    $row = $result->fetch_assoc();
-    $id_huesped = $row['id_huesped'];
-} else {
-    $id_huesped = $stmt->insert_id;
+// Validación básica
+if (empty($nombre) || empty($fechanac) || empty($fecha_inicio) || empty($fecha_fin)) {
+    die("Por favor completa todos los campos obligatorios.");
 }
-$stmt->close();
 
-// 2. Insertar reserva en Control_hospedaje
-$estado = "reservado";
-$stmt = $mysqli->prepare("INSERT INTO Control_hospedaje (id_huesped, id_habitacion, fecha_inicio, fecha_fin, estado) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("iisss", $id_huesped, $id_habitacion, $fecha_inicio, $fecha_fin, $estado);
-$stmt->execute();
-$stmt->close();
+try {
+    // Calcular edad
+    $fechaNacimiento = new DateTime($fechanac);
+    $hoy = new DateTime();
+    $edad = $hoy->diff($fechaNacimiento)->y;
 
-echo "Reserva guardada correctamente. <a href='panel_reservas.php'>Ver reservas</a>";
+    if ($edad < 18) {
+        die("Solo mayores de edad pueden hacer reservas.");
+    }
+
+    // Preparar consulta
+    $stmt = $conn->prepare("
+        INSERT INTO reservas 
+        (nombre, fechanac, correo, telefono, fecha_inicio, fecha_fin) 
+        VALUES (?, ?, ?, ?, ?, ?)
+    ");
+
+    if ($stmt === false) {
+        throw new Exception("Error al preparar la consulta: " . $conn->error);
+    }
+
+    // Ejecutar consulta con parámetros
+    $stmt->bind_param(
+        "ssssss",
+        $nombre,
+        $fechanac,
+        $correo,
+        $telefono,
+        $fecha_inicio,
+        $fecha_fin
+    );
+
+    $stmt->execute();
+
+    echo "<div class='alert alert-success'>✅ Reserva guardada correctamente.</div>";
+    echo "<a href='javascript:history.back()' class='btn btn-primary'>Volver</a>";
+
+    $stmt->close();
+} catch (Exception $e) {
+    echo "<div class='alert alert-danger'>❌ Error al guardar la reserva: " . $e->getMessage() . "</div>";
+}
 ?>
