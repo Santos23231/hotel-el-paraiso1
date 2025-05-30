@@ -1,11 +1,13 @@
 <?php
 session_start();
 
+// Verificar si el usuario está autenticado
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
 
+// Leer reservas desde el archivo
 $reservas = [];
 if (file_exists('reservas.txt')) {
     $lines = file('reservas.txt', FILE_IGNORE_NEW_LINES);
@@ -21,13 +23,17 @@ if (file_exists('reservas.txt')) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="css/panel.css" rel="stylesheet" />
+    <!-- Custom CSS -->
 </head>
 <body>
     
+        <!-- Sidebar -->
         <div class="d-flex">
+        <!-- Sidebar -->
         <div class="sidebar p-3">
             <h4 class="text-center">ADMINISTRADOR</h4>
             <ul class="list-unstyled">
@@ -38,7 +44,9 @@ if (file_exists('reservas.txt')) {
             </ul>
         </div>
         
+        <!-- Main Content -->
         <div class="flex-grow-1">
+            <!-- Topbar -->
             <div class="topbar d-flex justify-content-between align-items-center">
                 <h5>Panel de Administración</h5>
                 <div class="dropdown">
@@ -58,6 +66,7 @@ if (file_exists('reservas.txt')) {
                     </div>
                 </div>  
             </div>
+            <!-- Reservations Table -->
             <div class="card mt-4">
                 <div class="card-body">
                     <h5 class="card-title text-center">Reservas</h5>
@@ -95,41 +104,33 @@ if (file_exists('reservas.txt')) {
                     </div>
                 </div>
             </div>
-            <!-- Apartado para agregar cargos a habitaciones -->
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Agregar Cargo a Habitación</h5>
-                    <form action="agregar_cargo.php" method="POST" class="row g-3">
-                        <div class="col-md-4">
-                            <label for="habitacion" class="form-label">Habitación</label>
-                            <select name="habitacion" id="habitacion" class="form-select" required>
-                                <option value="">Selecciona una habitación</option>
-                                <?php foreach ($reservas as $reserva): ?>
-                                    <option value="<?php echo htmlspecialchars($reserva[4]); ?>">
-                                        <?php echo htmlspecialchars($reserva[4]); ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="concepto" class="form-label">Concepto</label>
-                            <input type="text" name="concepto" id="concepto" class="form-control" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="monto" class="form-label">Monto</label>
-                            <input type="number" name="monto" id="monto" class="form-control" step="0.01" min="0" required>
-                        </div>
-                        <div class="col-12 text-center">
-                            <button type="submit" class="btn btn-success mt-2">Agregar Cargo</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- Fin apartado cargos -->
         </div>
     </div>
+    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Chart.js Example
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
+                datasets: [{
+                    label: 'Ganancias',
+                    data: [5000, 10000, 15000, 20000, 25000, 30000, 40000],
+                    borderColor: 'rgba(78, 115, 223, 1)',
+                    backgroundColor: 'rgba(78, 115, 223, 0.1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
 </body>
 </html>

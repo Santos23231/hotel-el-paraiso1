@@ -1,11 +1,13 @@
 <?php
 session_start();
 
+// Verificar si el usuario está autenticado
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
 
+// Leer reservas desde el archivo
 $reservas = [];
 if (file_exists('reservas.txt')) {
     $lines = file('reservas.txt', FILE_IGNORE_NEW_LINES);
@@ -21,12 +23,15 @@ if (file_exists('reservas.txt')) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="css/panel.css" rel="stylesheet" />
+    <!-- Custom CSS -->
 </head>
 <body>
     <div class="d-flex">
+        <!-- Sidebar -->
         <div class="sidebar p-3">
             <h4 class="text-center">SB Admin</h4>
             <ul class="list-unstyled">
@@ -36,7 +41,10 @@ if (file_exists('reservas.txt')) {
                 
             </ul>
         </div>
+        
+        <!-- Main Content -->
         <div class="flex-grow-1">
+            <!-- Topbar -->
             <div class="topbar d-flex justify-content-between align-items-center">
                 <h5>Panel de Administración</h5>
                 <div class="dropdown">
@@ -48,11 +56,13 @@ if (file_exists('reservas.txt')) {
                     </ul>
                 </div>
             </div>
+            <!-- Rooms Section -->
 <div class="card mt-4">
     <div class="card-body">
         <h5 class="card-title text-center">Habitaciones</h5>
         <div class="row g-3 justify-content-center">
             <?php
+            // Simulación de habitaciones (puedes reemplazar esto por consulta a BD)
             $habitaciones = [
                 ['id' => 1, 'estado' => 'disponible', 'nombre' => '', 'total' => 0],
                 ['id' => 2, 'estado' => 'ocupada', 'nombre' => 'Carlos M.', 'total' => 700],
@@ -88,12 +98,16 @@ if (file_exists('reservas.txt')) {
     </div>
 </div>
             
+            <!-- Reservations Table -->
             
     </div>
+    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        // Chart.js Example
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'line',

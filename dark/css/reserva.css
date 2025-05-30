@@ -1,13 +1,18 @@
+/* ...existing code... */
+
+/* Fondo general blanco y texto negro */
 body, .modal-content, .card, .navbar, .timeline-panel {
     background: #fff !important;
     color: #111 !important;
 }
+
+/* Navbar fondo negro, texto blanco */
 .navbar, .navbar .navbar-brand, .navbar-nav .nav-link {
     background: #000 !important;
     color: #fff !important;
 }
 
-
+/* Botones en blanco y negro */
 .btn, .btn-primary, .btn-close {
     background: #000 !important;
     color: #fff !important;
@@ -19,26 +24,31 @@ body, .modal-content, .card, .navbar, .timeline-panel {
     border: 1px solid #000 !important;
 }
 
+/* Quitar colores de iconos FontAwesome */
 .fa, .fas, .fab {
     color: #111 !important;
 }
 
+/* Quitar colores de títulos y subtítulos */
 .section-heading, .section-subheading, h1, h2, h3, h4, h5, h6 {
     color: #111 !important;
 }
 
+/* Quitar colores de timeline */
 .timeline-image, .timeline-panel {
     background: #fff !important;
     color: #111 !important;
     border: 1px solid #ccc !important;
 }
 
+/* Quitar colores de cards */
 .card {
     background: #fff !important;
     color: #111 !important;
     border: 1px solid #ccc !important;
 }
 
+/* Quitar colores de los iconos de servicios */
 .fa-stack-2x {
     color: #ccc !important;
 }
@@ -46,12 +56,13 @@ body, .modal-content, .card, .navbar, .timeline-panel {
     color: #111 !important;
 }
 
-
+/* Quitar colores de enlaces */
 a, a:visited, a:hover {
     color: #111 !important;
     text-decoration: underline;
 }
 
+/* Opcional: imágenes en blanco y negro */
 img, video {
     filter: grayscale(100%);
 }

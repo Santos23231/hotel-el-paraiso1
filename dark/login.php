@@ -1,8 +1,10 @@
 <?php
 session_start();
 
+// Usuarios quemados
 $users = [
-    'user' => 'admin'  
+ // Usuario administrador
+    'user' => 'admin'    // Usuario normal
 ];
 
 $errorMessage = "";
@@ -11,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    // Validar credenciales
     if (isset($users[$username]) && $users[$username] === $password) {
         $_SESSION['username'] = $username;
         header("Location: panel.php");

@@ -1,3 +1,4 @@
+/* General styles for the About section */
 #about {
     padding: 60px 0;
     background-color: #f8f9fa;
@@ -102,6 +103,7 @@
     color: #6c757d;
 }
 
+/* Final timeline item */
 .timeline > li:last-child .timeline-image {
     background-color: #ffc107;
     color: #fff;
