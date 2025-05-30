@@ -372,41 +372,41 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="modalReservaLabel">Reservar Habitación</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                    <div id="edad-error" class="text-danger mt-1" style="display:none;"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" required>
+                </div>
+                <div class="mb-3">
+                    <label for="checkin" class="form-label">Check-in (Fecha y hora de entrada)</label>
+                    <input type="datetime-local" class="form-control" id="checkin" name="checkin" required>
+                </div>
+                <div class="mb-3">
+                    <label for="checkout" class="form-label">Check-out (Fecha y hora de salida)</label>
+                    <input type="datetime-local" class="form-control" id="checkout" name="checkout" required>
+                </div>
+                </div>
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Reservar</button>
+                </div>
+            </form>
+            </div>
+        </div>
     </div>
-    <div class="modal-body">
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
-        </div>
-        <div class="mb-3">
-            <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
-            <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
-            <div id="edad-error" class="text-danger mt-1" style="display:none;"></div>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="mb-3">
-            <label for="telefono" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" id="telefono" name="telefono" required>
-        </div>
-        <div class="mb-3">
-            <label for="fecha" class="form-label">Fecha de Entrada</label>
-            <input type="date" class="form-control" id="fecha" name="fecha" required>
-        </div>
-        <div class="mb-3">
-            <label for="fecha_salida" class="form-label">Fecha de Salida</label>
-            <input type="date" class="form-control" id="fecha_salida" name="fecha_salida" required>
-        </div>
-        </div>
-        <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Reservar</button>
-        </div>
-    </form>
-    </div>
-</div>
-</div>
 
 <!-- contacto -->
 <section class="page-section" id="contact">
