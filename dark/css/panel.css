@@ -1,14 +1,13 @@
 :root {
-    /* Paleta de colores oscuros */
-    --bg-dark: #121212;       /* Fondo principal */
-    --bg-secondary: #1E1E1E;  /* Fondos secundarios (cards, sidebars) */
-    --bg-accent: #2D2D2D;     /* Elementos destacados (hover, active) */
-    --primary-color: #BB86FC; /* Color principal (morado moderno) */
-    --primary-hover: #A370D7; /* Hover del color principal */
-    --text-primary: #E0E0E0;  /* Texto principal */
-    --text-secondary: #A0A0A0;/* Texto secundario */
-    --border-dark: #333333;   /* Bordes sutiles */
-    --shadow-dark: rgba(0, 0, 0, 0.5); /* Sombras más profundas */
+    --bg-dark: #121212;     
+    --bg-secondary: #1E1E1E;  
+    --bg-accent: #2D2D2D;     
+    --primary-color: #BB86FC; 
+    --primary-hover: #A370D7; 
+    --text-primary: #E0E0E0;  
+    --text-secondary: #A0A0A0;
+    --border-dark: #333333;   
+    --shadow-dark: rgba(0, 0, 0, 0.5); 
 }
 
 body {

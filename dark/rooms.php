@@ -1,13 +1,12 @@
 <?php
 session_start();
 
-// Verificar si el usuario está autenticado
+
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
 
-// Leer reservas desde el archivo
 $reservas = [];
 if (file_exists('reservas.txt')) {
     $lines = file('reservas.txt', FILE_IGNORE_NEW_LINES);
@@ -16,7 +15,6 @@ if (file_exists('reservas.txt')) {
     }
 }
 
-// Leer reservas
 $reservas = [];
 if (file_exists('reservas.txt')) {
     $lines = file('reservas.txt', FILE_IGNORE_NEW_LINES);
@@ -27,7 +25,6 @@ if (file_exists('reservas.txt')) {
     }
 }
 
-// Número total de habitaciones
 $total_habitaciones = 8;
 ?>
 
@@ -37,15 +34,12 @@ $total_habitaciones = 8;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="css/panel.css" rel="stylesheet" />
-    <!-- Custom CSS -->
+
 </head>
 <body>
     <div class="d-flex">
-        <!-- Sidebar -->
         <div class="sidebar p-3">
             <h4 class="text-center">SB Admin</h4>
             <ul class="list-unstyled">
@@ -56,9 +50,7 @@ $total_habitaciones = 8;
             </ul>
         </div>
         
-        <!-- Main Content -->
         <div class="flex-grow-1">
-            <!-- Topbar -->
             <div class="topbar d-flex justify-content-between align-items-center">
                 <h5>Panel de Administración</h5>
                 <div class="dropdown">
@@ -70,14 +62,12 @@ $total_habitaciones = 8;
                     </ul>
                 </div>
             </div>
-            <!-- Rooms Section -->
             <div class="container mt-4">
                 <h2 class="text-center mb-4">Habitaciones</h2>
                 <div class="row">
                     <?php for ($i = 1; $i <= $total_habitaciones; $i++): ?>
                         <div class="col-md-3 mb-4">
                             <?php if (isset($reservas[$i])): ?>
-                                <!-- Habitación ocupada -->
                                 <div class="card text-white bg-danger h-100">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Hab. <?php echo $i; ?> - Ocupada</h5>
@@ -86,18 +76,15 @@ $total_habitaciones = 8;
                                     </div>
                                 </div>
                             <?php else: ?>
-                                <!-- Habitación disponible -->
                                 <div class="card text-white bg-success h-100">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Hab. <?php echo $i; ?> - Disponible</h5>
                                         <p>Habitación disponible</p>
-                                        <!-- Botón para agregar usuario -->
                                         <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#agregarUsuarioModal<?php echo $i; ?>">
                                             Agregar usuario
                                         </button>
                                     </div>
                                 </div>
-                                <!-- Modal para agregar usuario -->
                                 <div class="modal fade" id="agregarUsuarioModal<?php echo $i; ?>" tabindex="-1" aria-labelledby="agregarUsuarioModal<?php echo $i; ?>Label" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <form action="agregar_usuario.php" method="POST">
@@ -128,7 +115,6 @@ $total_habitaciones = 8;
                                                         <label class="form-label">Total a pagar</label>
                                                         <input type="number" class="form-control" name="total" required>
                                                     </div>
-                                                    <!-- Campos adicionales -->
                                                     <div class="mb-3">
                                                         <label class="form-label">Teléfono</label>
                                                         <input type="text" class="form-control" name="telefono" required>
@@ -165,13 +151,10 @@ $total_habitaciones = 8;
             </div>
         </div>
     </div>
-    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        // Chart.js Example
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'line',

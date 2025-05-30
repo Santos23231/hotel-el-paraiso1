@@ -14,9 +14,7 @@
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/contacto.css" rel="stylesheet" />
 
-        <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     </head>
     <body id="page-top">
@@ -69,7 +67,6 @@
 </header>
 
 
-<!-- Servicios -->
 <section class="page-section" id="services">
     <div class="container">
         <div class="text-center">
@@ -77,7 +74,6 @@
             <h3 class="section-subheading text-muted">Descubre todo lo que ofrecemos para hacer tu estancia inolvidable.</h3>
         </div>
         <div class="row text-center">
-            <!-- Servicio 1 -->
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
                     <i class="fas fa-circle fa-stack-2x text-primary"></i>
@@ -86,7 +82,6 @@
                 <h4 class="my-3">Atención 24/7</h4>
                 <p class="text-muted">Nuestro equipo está disponible las 24 horas para atender todas tus necesidades.</p>
             </div>
-            <!-- Servicio 2 -->
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
                     <i class="fas fa-circle fa-stack-2x text-primary"></i>
@@ -97,7 +92,6 @@
                 
                 <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#menuRestauranteModal">Ver Menú</a>
             </div>
-            <!-- Servicio 3 -->
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
                     <i class="fas fa-circle fa-stack-2x text-primary"></i>
@@ -109,8 +103,6 @@
         </div>
     </div>
 </section>
-
-<!-- Menú del Restaurante en Modal Fullscreen -->
 <div class="modal fade" id="menuRestauranteModal" tabindex="-1" aria-labelledby="menuRestauranteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
@@ -195,17 +187,14 @@
                     <h4 class="section-subheading text-muted">Refresca tu día con nuestras bebidas exclusivas.</h4>
                 </div>
                 <div class="row">
-                    <!-- Bebida 1 -->
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/bebidas/bebida1.jpeg" alt="Bebida 1">
                         <p class="text-muted text-center">Bebida refrescante 1</p>
                     </div>
-                    <!-- Bebida 2 -->
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/bebidas/bebida2.jpg" alt="Bebida 2">
                         <p class="text-muted text-center">Bebida refrescante 2</p>
                     </div>
-                    <!-- Bebida 3 -->
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <img class="img-fluid rounded mb-3" src="./css/images/bebidas/bebida3.jpg" alt="Bebida 3">
                         <p class="text-muted text-center">Bebida refrescante 3</p>             
@@ -226,7 +215,6 @@
     </div>
 </div>
 
-<!-- Botón para abrir el modal -->
 
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
@@ -235,7 +223,6 @@
             <h3 class="section-subheading text-muted">Bienvenidos a nuestro hotel el paraiso, donde esperamos que viva la mejor experiencia.</h3>
         </div>
         <div class="row">
-            <!-- Habitación 1 -->
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion1.jpeg" alt="Habitación 1">
@@ -245,7 +232,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Habitación 2 -->
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion2.jpg" alt="Habitación 2">
@@ -255,7 +241,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Habitación 3 -->
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion3.jpg" alt="Habitación 3">
@@ -265,7 +250,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Habitación 4 -->
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion4.jpg" alt="Habitación 4">
@@ -275,7 +259,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Habitación 5 -->
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion5.jpg" alt="Habitación 5">
@@ -285,7 +268,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Habitación 6 -->
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion6.jpg" alt="Habitación 6">
@@ -295,7 +277,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Habitación 7 -->
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion7.jpg" alt="Habitación 7">
@@ -305,7 +286,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Habitación 8 -->
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card">
                     <img class="card-img-top" src="./css/images/habitacion8.jpg" alt="Habitación 8">
@@ -319,7 +299,6 @@
     </div>
 </section>
 
-<!-- Acerca de nosotros -->
 <section class="page-section bg-light" id="about">
     <div class="container">
         <div class="text-center">
@@ -327,7 +306,6 @@
             <h3 class="section-subheading text-muted">Conoce más sobre nuestro hotel</h3>
         </div>
         <div class="row justify-content-center">
-            <!-- Historia -->
             <div class="col-md-6 col-lg-3 mb-4">
                 <div class="card h-100 shadow">
                     <img src="./css/images/emirates.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;object-fit:cover;" alt="Hotel El Paraiso">
@@ -338,7 +316,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Misión -->
             <div class="col-md-6 col-lg-3 mb-4">
                 <div class="card h-100 shadow">
                     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;object-fit:cover;" alt="Misión">
@@ -349,7 +326,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Visión -->
             <div class="col-md-6 col-lg-3 mb-4">
                 <div class="card h-100 shadow">
                     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" class="card-img-top rounded-circle mx-auto mt-3" style="width:100px;height:100px;object-fit:cover;" alt="Visión">
@@ -364,7 +340,6 @@
     </div>
 </section>
 
-<!-- Modal de Reserva -->
 <div class="modal fade" id="modalReserva" tabindex="-1" aria-labelledby="modalReservaLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -408,7 +383,6 @@
 </div>
 </div>
 
-<!-- contacto -->
 <section class="page-section" id="contact">
     <div class="container">
         <div class="text-center mb-5">
@@ -416,7 +390,6 @@
             <h3 class="section-subheading text-muted">¿Tienes dudas o quieres reservar? ¡Contáctanos o síguenos en redes sociales!</h3>
         </div>
         <div class="row justify-content-center">
-            <!-- Redes Sociales -->
             <div class="col-md-5 mb-4">
                 <div class="card h-100 shadow text-center p-4">
                     <h5 class="card-title mb-3">Síguenos en redes sociales</h5>
@@ -434,7 +407,6 @@
                     <p class="text-muted mb-0">hotelparaiso@gmail.com</p>
                 </div>
             </div>
-            <!-- Formulario de contacto -->
             <div class="col-md-7 mb-4">
                 <div class="card h-100 shadow p-4">
                     <h5 class="card-title mb-3">Envíanos un mensaje</h5>
