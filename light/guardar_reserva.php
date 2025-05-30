@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     if (!empty($nombre) && !empty($email) && !empty($telefono) && !empty($fecha) && !empty($fecha_nacimiento)) {
-        // Leer reservas existentes
         $filePath = 'reservas.txt';
         $reservas = file_exists($filePath) ? file($filePath, FILE_IGNORE_NEW_LINES) : [];
         $ocupadas = [];

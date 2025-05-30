@@ -95,6 +95,37 @@ if (file_exists('reservas.txt')) {
                     </div>
                 </div>
             </div>
+            <!-- Apartado para agregar cargos a habitaciones -->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Agregar Cargo a Habitación</h5>
+                    <form action="agregar_cargo.php" method="POST" class="row g-3">
+                        <div class="col-md-4">
+                            <label for="habitacion" class="form-label">Habitación</label>
+                            <select name="habitacion" id="habitacion" class="form-select" required>
+                                <option value="">Selecciona una habitación</option>
+                                <?php foreach ($reservas as $reserva): ?>
+                                    <option value="<?php echo htmlspecialchars($reserva[4]); ?>">
+                                        <?php echo htmlspecialchars($reserva[4]); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="concepto" class="form-label">Concepto</label>
+                            <input type="text" name="concepto" id="concepto" class="form-control" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="monto" class="form-label">Monto</label>
+                            <input type="number" name="monto" id="monto" class="form-control" step="0.01" min="0" required>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-success mt-2">Agregar Cargo</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Fin apartado cargos -->
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
