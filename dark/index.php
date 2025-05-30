@@ -455,3 +455,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+<!-- Modal para agregar servicios -->
+<div id="servicio-form" class="servicio-form" style="display:none;">
+  <div class="servicio-form-content">
+    <span id="cerrar-form" onclick="cerrarFormularioServicio()" style="float:right;cursor:pointer;">&times;</span>
+    <h3>Agregar servicio</h3>
+    <form onsubmit="agregarServicio(event)">
+      <label>Habitación:</label>
+      <input type="text" id="habitacion-servicio" class="form-control mb-2" readonly>
+      <label>Servicio:</label>
+      <input type="text" id="nombre-servicio" class="form-control mb-2" required>
+      <button type="submit" class="btn btn-primary mt-2">Agregar</button>
+    </form>
+  </div>
+</div>
